@@ -30,4 +30,23 @@ class UI {
       <div id="repos></div>
     `;
   }
+  //show alert message if no profile is found
+  showAlert(){
+    //creat div
+    const div = document.createElement('div');
+    //Add classes
+    div.className = className;
+    //Add text
+    div.appendChild(document.createTextNode(message));
+    //get parent
+    const container = document.querySelector('.searchContainer');
+    //get search box
+    const search = document.querySelector('.search');
+    container.insertBefore(div, search);
+  }
+  
+  //clear profile if target.val = ''
+  clearProfile(){
+    this.profile.innerHTML = '';
+  }
 }
